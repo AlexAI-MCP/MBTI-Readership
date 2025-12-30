@@ -15,78 +15,77 @@ export const HomePage = () => {
       padding: '20px'
     }}>
       <motion.div
-        initial={{ opacity: 0, y: -50 }}
+        initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.6 }}
         style={{
           textAlign: 'center',
-          marginBottom: '60px'
+          marginBottom: '30px'
         }}
       >
         <h1 style={{
-          fontSize: 'clamp(2rem, 8vw, 4rem)',
-          fontWeight: '800',
+          fontSize: 'clamp(1.5rem, 5vw, 2.5rem)',
+          fontWeight: '700',
           color: 'white',
-          marginBottom: '20px',
-          textShadow: '0 4px 20px rgba(0, 0, 0, 0.2)',
-          letterSpacing: '-1px'
+          marginBottom: '12px',
+          letterSpacing: '-0.5px'
         }}>
           MBTI 커뮤니케이션 가이드
         </h1>
         <p style={{
-          fontSize: 'clamp(1rem, 3vw, 1.5rem)',
-          color: 'rgba(255, 255, 255, 0.9)',
+          fontSize: 'clamp(0.85rem, 2vw, 1rem)',
+          color: 'rgba(255, 255, 255, 0.7)',
           fontWeight: '400',
-          maxWidth: '600px',
+          maxWidth: '500px',
           margin: '0 auto'
         }}>
-          상대의 MBTI 성향에 맞춘 효과적인 소통 방법을 알아보세요
+          상대의 MBTI 성향에 맞춘 효과적인 소통 방법
         </p>
       </motion.div>
 
       <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
+        initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, delay: 0.3 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
         style={{
-          background: 'rgba(255, 255, 255, 0.25)',
+          background: 'rgba(255, 255, 255, 0.08)',
           backdropFilter: 'blur(10px)',
           WebkitBackdropFilter: 'blur(10px)',
-          borderRadius: '30px',
-          border: '1px solid rgba(255, 255, 255, 0.18)',
-          padding: '40px',
-          maxWidth: '500px',
+          borderRadius: '16px',
+          border: '1px solid rgba(255, 255, 255, 0.1)',
+          padding: '24px',
+          maxWidth: '380px',
           width: '100%',
-          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)'
+          boxShadow: '0 4px 16px rgba(0, 0, 0, 0.3)'
         }}
       >
         <div style={{
           display: 'flex',
           flexDirection: 'column',
-          gap: '20px'
+          gap: '12px'
         }}>
-          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '4px' }}>
             <h2 style={{
-              fontSize: '1.5rem',
+              fontSize: '1.1rem',
               color: 'white',
               fontWeight: '600',
-              marginBottom: '10px'
+              marginBottom: '6px'
             }}>
               시작하기
             </h2>
             <p style={{
-              fontSize: '0.95rem',
-              color: 'rgba(255, 255, 255, 0.85)',
-              lineHeight: '1.6'
+              fontSize: '0.85rem',
+              color: 'rgba(255, 255, 255, 0.6)',
+              lineHeight: '1.5'
             }}>
-              업무 상황에서 더 나은 소통을 위한<br/>맞춤형 조언을 받아보세요
+              맞춤형 조언을 받아보세요
             </p>
           </div>
 
           <GlassButton
             onClick={() => navigate('/relationship')}
             variant="primary"
-            size="large"
+            size="medium"
           >
             조언 받기
           </GlassButton>
@@ -96,46 +95,46 @@ export const HomePage = () => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.6 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
         style={{
-          marginTop: '60px',
+          marginTop: '30px',
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-          gap: '20px',
-          maxWidth: '800px',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
+          gap: '12px',
+          maxWidth: '600px',
           width: '100%'
         }}
       >
         {[
-          { title: '50가지 상황', desc: '다양한 업무 시나리오' },
-          { title: '16개 성격 유형', desc: '모든 MBTI 타입 지원' },
-          { title: '맞춤형 조언', desc: '세밀한 커뮤니케이션 가이드' }
+          { title: '50가지 상황', desc: '업무 시나리오' },
+          { title: '16개 유형', desc: 'MBTI 지원' },
+          { title: '맞춤 조언', desc: '세밀한 가이드' }
         ].map((item, index) => (
           <motion.div
             key={index}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
+            transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
             style={{
-              background: 'rgba(255, 255, 255, 0.2)',
+              background: 'rgba(255, 255, 255, 0.06)',
               backdropFilter: 'blur(10px)',
-              borderRadius: '15px',
-              padding: '25px',
+              borderRadius: '12px',
+              padding: '16px 12px',
               textAlign: 'center',
-              border: '1px solid rgba(255, 255, 255, 0.15)'
+              border: '1px solid rgba(255, 255, 255, 0.08)'
             }}
           >
             <h3 style={{
-              fontSize: '1.2rem',
+              fontSize: '0.95rem',
               color: 'white',
-              fontWeight: '700',
-              marginBottom: '8px'
+              fontWeight: '600',
+              marginBottom: '4px'
             }}>
               {item.title}
             </h3>
             <p style={{
-              fontSize: '0.9rem',
-              color: 'rgba(255, 255, 255, 0.8)'
+              fontSize: '0.75rem',
+              color: 'rgba(255, 255, 255, 0.5)'
             }}>
               {item.desc}
             </p>

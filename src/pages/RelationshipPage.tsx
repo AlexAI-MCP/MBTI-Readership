@@ -13,19 +13,19 @@ export const RelationshipPage = () => {
     {
       type: 'junior' as RelationshipType,
       title: '후배',
-      description: '지도하고 이끌어야 하는 후배와의 소통',
+      description: '지도하고 이끌어야 하는 후배',
       icon: '👤'
     },
     {
       type: 'senior' as RelationshipType,
       title: '선배',
-      description: '보고하고 협력하는 선배와의 소통',
+      description: '보고하고 협력하는 선배',
       icon: '👔'
     },
     {
       type: 'colleague' as RelationshipType,
       title: '동료',
-      description: '함께 협업하는 동료와의 소통',
+      description: '함께 협업하는 동료',
       icon: '🤝'
     }
   ];
@@ -46,26 +46,25 @@ export const RelationshipPage = () => {
       padding: '20px'
     }}>
       <motion.div
-        initial={{ opacity: 0, y: -30 }}
+        initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.5 }}
         style={{
           textAlign: 'center',
-          marginBottom: '50px'
+          marginBottom: '30px'
         }}
       >
         <h1 style={{
-          fontSize: 'clamp(1.8rem, 6vw, 3rem)',
+          fontSize: 'clamp(1.3rem, 4vw, 1.8rem)',
           fontWeight: '700',
           color: 'white',
-          marginBottom: '15px',
-          textShadow: '0 4px 20px rgba(0, 0, 0, 0.2)'
+          marginBottom: '8px'
         }}>
           소통 상대를 선택하세요
         </h1>
         <p style={{
-          fontSize: 'clamp(0.9rem, 2.5vw, 1.2rem)',
-          color: 'rgba(255, 255, 255, 0.9)',
+          fontSize: 'clamp(0.8rem, 2vw, 0.95rem)',
+          color: 'rgba(255, 255, 255, 0.6)',
           fontWeight: '400'
         }}>
           누구와 대화하시나요?
@@ -74,18 +73,18 @@ export const RelationshipPage = () => {
 
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-        gap: '25px',
-        maxWidth: '900px',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
+        gap: '16px',
+        maxWidth: '600px',
         width: '100%',
-        marginBottom: '40px'
+        marginBottom: '30px'
       }}>
         {relationships.map((rel, index) => (
           <motion.div
             key={rel.type}
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.15 }}
+            transition={{ duration: 0.4, delay: index * 0.1 }}
           >
             <GlassCard
               onClick={() => setSelected(rel.type)}
@@ -96,30 +95,30 @@ export const RelationshipPage = () => {
                 flexDirection: 'column',
                 alignItems: 'center',
                 justifyContent: 'center',
-                padding: '35px 25px',
-                minHeight: '220px'
+                padding: '20px 16px',
+                minHeight: '140px'
               }}
             >
               <div style={{
-                fontSize: '4rem',
-                marginBottom: '20px',
-                filter: selected === rel.type ? 'brightness(1.2)' : 'brightness(1)'
+                fontSize: '2.5rem',
+                marginBottom: '12px',
+                filter: selected === rel.type ? 'brightness(1.2)' : 'brightness(0.9)'
               }}>
                 {rel.icon}
               </div>
               <h3 style={{
-                fontSize: '1.5rem',
+                fontSize: '1.1rem',
                 color: 'white',
-                fontWeight: '700',
-                marginBottom: '10px'
+                fontWeight: '600',
+                marginBottom: '6px'
               }}>
                 {rel.title}
               </h3>
               <p style={{
-                fontSize: '0.95rem',
-                color: 'rgba(255, 255, 255, 0.85)',
+                fontSize: '0.8rem',
+                color: 'rgba(255, 255, 255, 0.6)',
                 textAlign: 'center',
-                lineHeight: '1.5'
+                lineHeight: '1.4'
               }}>
                 {rel.description}
               </p>
@@ -131,23 +130,23 @@ export const RelationshipPage = () => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.6, delay: 0.5 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
         style={{
           display: 'flex',
-          gap: '15px'
+          gap: '12px'
         }}
       >
         <GlassButton
           onClick={() => navigate('/')}
           variant="secondary"
-          size="medium"
+          size="small"
         >
           이전
         </GlassButton>
         <GlassButton
           onClick={handleNext}
           variant="primary"
-          size="medium"
+          size="small"
           disabled={!selected}
         >
           다음

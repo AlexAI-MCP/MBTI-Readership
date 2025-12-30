@@ -46,7 +46,7 @@ export const SituationPage = () => {
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      padding: '40px 20px'
+      padding: '20px 16px'
     }}>
       <motion.div
         initial={{ opacity: 0, y: -30 }}
@@ -54,20 +54,20 @@ export const SituationPage = () => {
         transition={{ duration: 0.6 }}
         style={{
           textAlign: 'center',
-          marginBottom: '30px'
+          marginBottom: '16px'
         }}
       >
         <h1 style={{
-          fontSize: 'clamp(1.8rem, 6vw, 3rem)',
+          fontSize: 'clamp(1.3rem, 4vw, 1.8rem)',
           fontWeight: '700',
           color: 'white',
-          marginBottom: '15px',
+          marginBottom: '8px',
           textShadow: '0 4px 20px rgba(0, 0, 0, 0.2)'
         }}>
           상황을 선택하세요
         </h1>
         <p style={{
-          fontSize: 'clamp(0.9rem, 2.5vw, 1.2rem)',
+          fontSize: 'clamp(0.8rem, 2vw, 0.95rem)',
           color: 'rgba(255, 255, 255, 0.9)',
           fontWeight: '400'
         }}>
@@ -82,11 +82,11 @@ export const SituationPage = () => {
         transition={{ duration: 0.6, delay: 0.2 }}
         style={{
           display: 'flex',
-          gap: '10px',
+          gap: '6px',
           flexWrap: 'wrap',
           justifyContent: 'center',
-          marginBottom: '40px',
-          maxWidth: '1000px'
+          marginBottom: '16px',
+          maxWidth: '900px'
         }}
       >
         {categories.map((cat) => (
@@ -99,10 +99,10 @@ export const SituationPage = () => {
                 : 'rgba(255, 255, 255, 0.2)',
               backdropFilter: 'blur(10px)',
               border: '1px solid rgba(255, 255, 255, 0.3)',
-              borderRadius: '20px',
-              padding: '10px 20px',
+              borderRadius: '12px',
+              padding: '6px 12px',
               color: 'white',
-              fontSize: '0.9rem',
+              fontSize: '0.75rem',
               fontWeight: '600',
               cursor: 'pointer',
               transition: 'all 0.3s ease'
@@ -126,16 +126,16 @@ export const SituationPage = () => {
       {/* 상황 목록 */}
       <div style={{
         width: '100%',
-        maxWidth: '1200px',
-        marginBottom: '40px'
+        maxWidth: '1000px',
+        marginBottom: '16px'
       }}>
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-          gap: '20px',
-          maxHeight: '60vh',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))',
+          gap: '10px',
+          maxHeight: '50vh',
           overflowY: 'auto',
-          padding: '10px'
+          padding: '6px'
         }}>
           {filteredSituations.map((situation, index) => (
             <motion.div
@@ -151,34 +151,39 @@ export const SituationPage = () => {
                   height: '100%',
                   display: 'flex',
                   flexDirection: 'column',
-                  padding: '25px',
-                  minHeight: '150px'
+                  padding: '12px',
+                  minHeight: '100px'
                 }}
               >
                 <div style={{
-                  fontSize: '0.8rem',
+                  fontSize: '0.65rem',
                   color: 'rgba(255, 255, 255, 0.7)',
                   fontWeight: '600',
-                  marginBottom: '12px',
+                  marginBottom: '6px',
                   textTransform: 'uppercase',
-                  letterSpacing: '1px'
+                  letterSpacing: '0.5px'
                 }}>
                   {getCategoryName(situation.category)}
                 </div>
                 <h3 style={{
-                  fontSize: '1.2rem',
+                  fontSize: '0.9rem',
                   color: 'white',
                   fontWeight: '700',
-                  marginBottom: '10px',
-                  lineHeight: '1.3'
+                  marginBottom: '6px',
+                  lineHeight: '1.2'
                 }}>
                   {situation.title}
                 </h3>
                 <p style={{
-                  fontSize: '0.95rem',
+                  fontSize: '0.75rem',
                   color: 'rgba(255, 255, 255, 0.85)',
-                  lineHeight: '1.5',
-                  flex: 1
+                  lineHeight: '1.4',
+                  flex: 1,
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                  display: '-webkit-box',
+                  WebkitLineClamp: 2,
+                  WebkitBoxOrient: 'vertical'
                 }}>
                   {situation.description}
                 </p>
@@ -193,12 +198,12 @@ export const SituationPage = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           style={{
-            marginBottom: '20px',
+            marginBottom: '12px',
             textAlign: 'center'
           }}
         >
           <p style={{
-            fontSize: '1rem',
+            fontSize: '0.85rem',
             color: 'white',
             fontWeight: '600'
           }}>
@@ -213,20 +218,20 @@ export const SituationPage = () => {
         transition={{ duration: 0.6, delay: 0.3 }}
         style={{
           display: 'flex',
-          gap: '15px'
+          gap: '10px'
         }}
       >
         <GlassButton
           onClick={handleBack}
           variant="secondary"
-          size="medium"
+          size="small"
         >
           이전
         </GlassButton>
         <GlassButton
           onClick={handleNext}
           variant="primary"
-          size="medium"
+          size="small"
           disabled={!selected}
         >
           조언 받기

@@ -27,7 +27,7 @@ export const AdvicePage = () => {
   return (
     <div style={{
       minHeight: '100vh',
-      padding: '40px 20px',
+      padding: '30px 20px',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center'
@@ -39,37 +39,37 @@ export const AdvicePage = () => {
         transition={{ duration: 0.6 }}
         style={{
           textAlign: 'center',
-          marginBottom: '40px',
+          marginBottom: '30px',
           maxWidth: '800px'
         }}
       >
         <h1 style={{
-          fontSize: 'clamp(1.8rem, 6vw, 3rem)',
+          fontSize: 'clamp(1.5rem, 5vw, 2.2rem)',
           fontWeight: '700',
           color: 'white',
-          marginBottom: '20px',
-          textShadow: '0 4px 20px rgba(0, 0, 0, 0.2)'
+          marginBottom: '16px',
+          textShadow: '0 4px 20px rgba(0, 0, 0, 0.3)'
         }}>
           커뮤니케이션 가이드
         </h1>
 
         <div style={{
-          background: 'rgba(255, 255, 255, 0.25)',
+          background: 'rgba(255, 255, 255, 0.15)',
           backdropFilter: 'blur(10px)',
-          borderRadius: '15px',
-          padding: '20px',
-          border: '1px solid rgba(255, 255, 255, 0.18)'
+          borderRadius: '12px',
+          padding: '16px',
+          border: '1px solid rgba(255, 255, 255, 0.2)'
         }}>
           <p style={{
-            fontSize: '1.2rem',
+            fontSize: '1.1rem',
             color: 'white',
             fontWeight: '600',
-            marginBottom: '10px'
+            marginBottom: '8px'
           }}>
             {relationshipText[relationship]} · {mbti} ({mbtiInfo.name})
           </p>
           <p style={{
-            fontSize: '1rem',
+            fontSize: '0.95rem',
             color: 'rgba(255, 255, 255, 0.9)'
           }}>
             {situation?.title}
@@ -425,7 +425,7 @@ export const AdvicePage = () => {
         transition={{ duration: 0.6, delay: 0.6 }}
         style={{
           display: 'flex',
-          gap: '15px',
+          gap: '12px',
           flexWrap: 'wrap',
           justifyContent: 'center'
         }}
@@ -433,14 +433,14 @@ export const AdvicePage = () => {
         <GlassButton
           onClick={() => navigate(`/situation?relationship=${relationship}&mbti=${mbti}`)}
           variant="secondary"
-          size="medium"
+          size="small"
         >
           다른 상황 선택
         </GlassButton>
         <GlassButton
           onClick={() => navigate('/')}
           variant="primary"
-          size="medium"
+          size="small"
         >
           처음으로
         </GlassButton>
